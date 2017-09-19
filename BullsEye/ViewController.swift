@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         sliderDesign()
         startNewRound()
         updateTargetLabel()
-        
     }
     
     
@@ -82,7 +81,6 @@ class ViewController: UIViewController {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
-        
     }
     
     func updateTargetLabel() {
