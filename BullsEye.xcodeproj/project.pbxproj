@@ -12,6 +12,9 @@
 		9D56AE051F7101CF001917C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D56AE031F7101CF001917C8 /* Main.storyboard */; };
 		9D56AE071F7101CF001917C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D56AE061F7101CF001917C8 /* Assets.xcassets */; };
 		9D56AE0A1F7101CF001917C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D56AE081F7101CF001917C8 /* LaunchScreen.storyboard */; };
+		9D8C82F01F7148B3005A8FD2 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C82EF1F7148B3005A8FD2 /* AboutVC.swift */; };
+		9DF88F611F714E3500847EA3 /* tokyo_2097 in Resources */ = {isa = PBXBuildFile; fileRef = 9DF88F601F714E1200847EA3 /* tokyo_2097 */; };
+		9DF88F631F7152DA00847EA3 /* Tokyo 2097.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF88F621F7152DA00847EA3 /* Tokyo 2097.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		9D56AE061F7101CF001917C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D56AE091F7101CF001917C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D56AE0B1F7101CF001917C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D8C82EF1F7148B3005A8FD2 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		9DF88F601F714E1200847EA3 /* tokyo_2097 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tokyo_2097; sourceTree = "<group>"; };
+		9DF88F621F7152DA00847EA3 /* Tokyo 2097.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tokyo 2097.otf"; path = "BullsEye/tokyo_2097/Tokyo 2097.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		9D56ADF31F7101CF001917C8 = {
 			isa = PBXGroup;
 			children = (
+				9DF88F621F7152DA00847EA3 /* Tokyo 2097.otf */,
 				9D56ADFE1F7101CF001917C8 /* BullsEye */,
 				9D56ADFD1F7101CF001917C8 /* Products */,
 			);
@@ -58,8 +65,10 @@
 				9D56AE011F7101CF001917C8 /* ViewController.swift */,
 				9D56AE031F7101CF001917C8 /* Main.storyboard */,
 				9D56AE061F7101CF001917C8 /* Assets.xcassets */,
+				9DF88F601F714E1200847EA3 /* tokyo_2097 */,
 				9D56AE081F7101CF001917C8 /* LaunchScreen.storyboard */,
 				9D56AE0B1F7101CF001917C8 /* Info.plist */,
+				9D8C82EF1F7148B3005A8FD2 /* AboutVC.swift */,
 			);
 			path = BullsEye;
 			sourceTree = "<group>";
@@ -123,7 +132,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF88F631F7152DA00847EA3 /* Tokyo 2097.otf in Resources */,
 				9D56AE0A1F7101CF001917C8 /* LaunchScreen.storyboard in Resources */,
+				9DF88F611F714E3500847EA3 /* tokyo_2097 in Resources */,
 				9D56AE071F7101CF001917C8 /* Assets.xcassets in Resources */,
 				9D56AE051F7101CF001917C8 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +149,7 @@
 			files = (
 				9D56AE021F7101CF001917C8 /* ViewController.swift in Sources */,
 				9D56AE001F7101CF001917C8 /* AppDelegate.swift in Sources */,
+				9D8C82F01F7148B3005A8FD2 /* AboutVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

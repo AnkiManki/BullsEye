@@ -1,24 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Tokyo 2097.otf">
+            <string>Tokyo2097</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BullsEye" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yz8-ga-R2b">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0a-s0-lKu">
+                                <rect key="frame" x="278" y="215" width="110" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="69A-al-LSc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="ilN-bu-Ru7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                <state key="normal" title="Hit me" backgroundImage="Button-Normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hitMeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPh-pQ-t2D"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x39-XX-Wto">
+                                <rect key="frame" x="125" y="51" width="417" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Put the Bull's Eye as close as you can to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5f-Ge-Fdk">
+                                        <rect key="frame" x="0.0" y="0.0" width="357" height="35"/>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTX-2g-QH6">
+                                        <rect key="frame" x="367" y="0.0" width="50" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="CVF-sT-n9W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-dw-em2">
+                                <rect key="frame" x="70" y="146" width="527" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="cjT-65-9QS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuO-Lq-MRa">
+                                <rect key="frame" x="43" y="145" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-xj-iOV">
+                                <rect key="frame" x="603" y="143" width="56" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR5-IB-BjA">
+                                <rect key="frame" x="40" y="300" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="P7P-QK-JFX"/>
+                                    <constraint firstAttribute="width" constant="35" id="svl-CN-A39"/>
+                                </constraints>
+                                <state key="normal" image="StartOverIcon" backgroundImage="SmallButton"/>
+                                <connections>
+                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVt-EI-9zi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fu1-bU-tuH">
+                                <rect key="frame" x="595" y="303" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="C2l-W9-EMT"/>
+                                    <constraint firstAttribute="height" constant="32" id="DRv-wb-Op3"/>
+                                </constraints>
+                                <state key="normal" image="InfoButton" backgroundImage="SmallButton"/>
+                                <connections>
+                                    <segue destination="Loi-s2-x5Q" kind="presentation" identifier="show" modalTransitionStyle="flipHorizontal" id="RlS-rL-RCZ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-bF-I5p">
+                                <rect key="frame" x="101" y="300" width="167" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-vH-0vo">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="35"/>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSN-HS-0X8">
+                                        <rect key="frame" x="64" y="0.0" width="103" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="103" id="j6k-Cn-FH7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EMl-MA-124">
+                                <rect key="frame" x="451" y="300" width="117" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQd-oG-1Vg">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-tG-tQy">
+                                        <rect key="frame" x="65.5" y="0.0" width="51.5" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51.5" id="EKx-wx-ho7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fu1-bU-tuH" secondAttribute="trailing" constant="40" id="1kL-fu-7yE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EMl-MA-124" secondAttribute="bottom" constant="40" id="63B-pX-2wj"/>
+                            <constraint firstItem="W0a-s0-lKu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6vr-zs-lCq"/>
+                            <constraint firstItem="x39-XX-Wto" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Yr-Vs-85d"/>
+                            <constraint firstItem="fu1-bU-tuH" firstAttribute="leading" secondItem="EMl-MA-124" secondAttribute="trailing" constant="27" id="B5q-mS-toj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x39-XX-Wto" secondAttribute="trailing" constant="125" id="Czv-VZ-6Py"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K0t-dw-em2" secondAttribute="trailing" constant="72" id="HKa-Ee-CZB"/>
+                            <constraint firstItem="K0t-dw-em2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="JH7-rG-PEZ"/>
+                            <constraint firstItem="Yz8-ga-R2b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Mxy-8K-mca"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zR5-IB-BjA" secondAttribute="bottom" constant="40" id="RTB-b5-6ez"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fu1-bU-tuH" secondAttribute="bottom" constant="40" id="VgJ-pF-mQt"/>
+                            <constraint firstItem="Yz8-ga-R2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bxg-DW-nFf"/>
+                            <constraint firstItem="x39-XX-Wto" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="h8H-re-YDa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X9W-bF-I5p" secondAttribute="bottom" constant="40" id="lqO-SU-WVS"/>
+                            <constraint firstItem="X9W-bF-I5p" firstAttribute="leading" secondItem="zR5-IB-BjA" secondAttribute="trailing" constant="26" id="oZo-HT-hrz"/>
+                            <constraint firstItem="W0a-s0-lKu" firstAttribute="top" secondItem="K0t-dw-em2" secondAttribute="bottom" constant="39" id="per-WX-AaO"/>
+                            <constraint firstItem="Yz8-ga-R2b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rtk-19-qWr"/>
+                            <constraint firstItem="K0t-dw-em2" firstAttribute="top" secondItem="x39-XX-Wto" secondAttribute="bottom" constant="60" id="si6-iX-vo1"/>
+                            <constraint firstItem="zR5-IB-BjA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="t23-Dz-ady"/>
+                            <constraint firstItem="Yz8-ga-R2b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ums-0w-Fud"/>
+                            <constraint firstItem="x39-XX-Wto" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="zJ4-b4-s0g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="roundLabel" destination="9Z5-tG-tQy" id="By5-S9-ygb"/>
+                        <outlet property="scoreLabel" destination="jSN-HS-0X8" id="bEg-KP-ltd"/>
+                        <outlet property="slider" destination="K0t-dw-em2" id="0PA-xV-DiO"/>
+                        <outlet property="targetLabel" destination="PTX-2g-QH6" id="YWB-fQ-WZF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.833583208395808" y="32.799999999999997"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="uG4-CX-d3H">
+            <objects>
+                <viewController id="Loi-s2-x5Q" customClass="AboutVC" customModule="BullsEye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CCG-Sw-ySS">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="kxn-tV-ZWZ">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDN-zg-Czh">
+                                <rect key="frame" x="279" y="284" width="110" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3hz-Hc-9O4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="fRI-Bj-1jR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                <state key="normal" title="Close" backgroundImage="Button-Highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeBtn:" destination="Loi-s2-x5Q" eventType="touchUpInside" id="Fxl-4S-PHs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*** Bull’s Eye ***" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whg-hD-nqL">
+                                <rect key="frame" x="222" y="67" width="223" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huu-0g-mKR">
+                                <rect key="frame" x="55" y="127.5" width="556" height="143.5"/>
+                                <string key="text">Welcome to the awesome game of Bull’s Eye where you can win points and
+fame by dragging a slider.
+Your goal is to place the slider as close as possible to the target value. The closer you are, the more points you score. Enjoy!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Tokyo2097" family="Tokyo 2097" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxn-tV-ZWZ" firstAttribute="top" secondItem="mBj-7Q-2ru" secondAttribute="top" id="3R9-Ca-F0i"/>
+                            <constraint firstItem="mBj-7Q-2ru" firstAttribute="trailing" secondItem="huu-0g-mKR" secondAttribute="trailing" constant="56" id="6Ik-xi-xDf"/>
+                            <constraint firstItem="mBj-7Q-2ru" firstAttribute="bottom" secondItem="TDN-zg-Czh" secondAttribute="bottom" constant="51" id="CyL-3y-IOL"/>
+                            <constraint firstItem="whg-hD-nqL" firstAttribute="top" secondItem="mBj-7Q-2ru" secondAttribute="top" constant="67" id="IVg-vy-rAA"/>
+                            <constraint firstItem="mBj-7Q-2ru" firstAttribute="trailing" secondItem="whg-hD-nqL" secondAttribute="trailing" constant="222" id="LZK-yZ-zNe"/>
+                            <constraint firstItem="huu-0g-mKR" firstAttribute="top" secondItem="whg-hD-nqL" secondAttribute="bottom" constant="31" id="MFa-HP-ByV"/>
+                            <constraint firstItem="whg-hD-nqL" firstAttribute="leading" secondItem="mBj-7Q-2ru" secondAttribute="leading" constant="222" id="RWb-Vv-DNR"/>
+                            <constraint firstItem="TDN-zg-Czh" firstAttribute="centerX" secondItem="CCG-Sw-ySS" secondAttribute="centerX" id="TfB-AD-P3c"/>
+                            <constraint firstItem="TDN-zg-Czh" firstAttribute="top" secondItem="huu-0g-mKR" secondAttribute="bottom" constant="13" id="Ypf-WC-pZa"/>
+                            <constraint firstItem="kxn-tV-ZWZ" firstAttribute="trailing" secondItem="mBj-7Q-2ru" secondAttribute="trailing" id="jTp-5q-yxt"/>
+                            <constraint firstItem="kxn-tV-ZWZ" firstAttribute="leading" secondItem="mBj-7Q-2ru" secondAttribute="leading" id="n4L-xq-KFu"/>
+                            <constraint firstItem="kxn-tV-ZWZ" firstAttribute="bottom" secondItem="mBj-7Q-2ru" secondAttribute="bottom" id="z1C-sn-oGR"/>
+                            <constraint firstItem="huu-0g-mKR" firstAttribute="leading" secondItem="mBj-7Q-2ru" secondAttribute="leading" constant="55" id="zDv-wL-VVO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mBj-7Q-2ru"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHT-Y1-nSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691.304347826087" y="32.799999999999997"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background-1" width="568" height="320"/>
+        <image name="Button-Highlighted" width="100" height="37"/>
+        <image name="Button-Normal" width="100" height="37"/>
+        <image name="InfoButton" width="10" height="22"/>
+        <image name="SmallButton" width="32" height="32"/>
+        <image name="StartOverIcon" width="20" height="20"/>
+    </resources>
 </document>
